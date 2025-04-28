@@ -1,0 +1,45 @@
+﻿#ModalBox {
+    background-color:  #e3f2fd;
+    
+}
+
+/* General Table Styling */
+.table th,
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Responsive adjustments for small screens */
+.table-responsive-sm {
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+    z-index: 0;
+}
+
+    .table-responsive-sm table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .table-responsive-sm thead th {
+        background-color: #0d1620;
+        z-index: 1;
+        position: sticky;
+    }
+
+    .table-responsive-sm tbody tr {
+        border-bottom : 1px solid black;
+    }
+
+    .table-responsive-sm th.fixed-col, .table-responsive-sm td.fixed-col {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        background-color : black;
+        color : white;
+    }
+
+

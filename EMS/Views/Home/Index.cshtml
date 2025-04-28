@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model EMS.Models.Student
+<link href="~/css/styles.css" rel="stylesheet" />
+
+<!-- Main Container -->
+
+<div class="table-responsive-sm">
+    <table class="table table-hover ">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col" class="fixed-col">Student ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Standard</th>
+                <th scope="col">Roll Number</th>
+                <th scope="col">Address</th>
+                <th scope="col">Fees</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="" id="studentTableBody">
+
+            <!-- This is where the student details will be displayed -->
+
+
+
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content" id="ModalBox">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Add New Student Information</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="studentForm" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <input class="form-control"  asp-for="StudentId" type="number" value= 0 hidden  /><br />
+                        <label for="Name" class="form-label">Name</label>
+                        <input class="form-control"  asp-for="StudentName" type="text" />
+                        <span asp-validation-for="StudentName" class="text-danger "></span><br />
+
+                        <label for="standard" class="form-label">Class</label>
+                        <input class="form-control" asp-for="StudentStandard" type="number" />
+                        <span asp-validation-for="StudentStandard" class="text-danger"></span><br />
+
+                        <label for="roll" class="form-label">Student Roll Number</label>
+                        <input class="form-control" asp-for="RollNo" type="number"   />
+                        <span asp-validation-for="RollNo" class="text-danger"></span><br />
+
+                        <label for="Address" class="form-label">Student Address</label>
+                        <input class="form-control"  asp-for="StudentAddress" type="text"  />
+                        <span asp-validation-for="StudentAddress" class="text-danger"></span><br />
+
+                        <label for="fees" class="form-label">Student Fees</label>
+                        <input class="form-control" asp-for="Fees" type="number"  />
+                        <span asp-validation-for="Fees" class="text-danger"></span><br />
+
+                        <button type="button" class="btn btn-primary"  onclick="SaveData()" id="SaveButton">Save</button>
+                        <button type="button" class="btn btn-primary"  id="UpdateButton">Update</button>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="~/js/scripts.js"></script>
